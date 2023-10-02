@@ -8,7 +8,7 @@
 </head>
 <body>
     <header>
-        <div class="left-section">
+        <section class="left-section">
             <div class="logo">
                 <img src="IconoH.png" alt="Logo">
             </div>
@@ -38,7 +38,7 @@
             
             <li><a href="profile.html">Profile</a></li>
                 
-        </div>
+        </section>
         <nav>
             <ul>
                 <li><div class="header-center">
@@ -52,10 +52,10 @@
         </nav>
     </header>
     <main>
-        <div class="corner-image top-left"><img src="ob4.png" alt="Image 1"></div>
-        <div class="corner-image top-right"><img src="ob5.png" alt="Image 2"></div>
-        <div class="profile">
-            <section class="personal-info">
+        <section class="corner-image top-left"><img src="ob4.png" alt="Image 1"></section>
+        <section class="corner-image top-right"><img src="ob5.png" alt="Image 2"></section>
+        <section class="profile">
+            <div class="personal-info">
                 <h1>Información Personal</h1>
                 <p>
                     <p></p>Nombre: Apachelo.
@@ -66,7 +66,7 @@
                    <p></p>Correo Electrónico: apache_heli@gmail.com
                    <p></p>Teléfono: +1-555-123-4567
                 </p>
-            </section>
+            </div>
     
             <section class="favorites">
                 <h2>Favoritos</h2>
@@ -77,19 +77,19 @@
                 </div>
             </section>
     
-            <section class="change-password">
+            <div class="change-password">
                 <h2>Change Password</h2>
                 <form action="cambiar-contrasena.php" method="post">
                     <label for="password">New Password:</label>
                     <input type="password" id="password" name="password" required>
                     <input type="submit" value="Cambiar Contraseña">
                 </form>
-            </section>
+            </div>
     
-            <section class="logout">
+            <div class="logout">
                 <a href="cerrar-sesion.php">Cerrar Sesión</a>
-            </section>
-        </div>
+            </div>
+        </section>
         </main>
     </body>
     </html>

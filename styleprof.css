@@ -188,7 +188,7 @@ nav ul li a {
 }
 
 .personal-info, .favorites, .change-password, .logout {
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     padding: 2rem;
     border: 1px solid #d3b8ae;
     background-color: #f0e3dd;
@@ -204,7 +204,7 @@ label {
 }
 
 input[type="password"] {
-    width: 100%;
+    width: 95%;
     padding: 1rem;
     margin-bottom: 1rem;
     border: 1px solid #ccc;
@@ -236,7 +236,7 @@ input[type="submit"] {
 }
 
 .favorite-images img {
-    width: 250px;
+    width: 235px;
     margin-right: 1rem;
 }
 
