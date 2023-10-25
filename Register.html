@@ -1,49 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styleR.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styleR.css" />
     <title>Register</title>
-</head>
-<body>
+  </head>
+  <body>
     <section class="container">
-        <div class="register-box">
-            <h2 class="title">Create your account</h2>
-            <form action="Login.html" method="get">
-                <div class="input-container">
-                    <input type="text" id="name" name="name" required placeholder="Username">
-                </div>
-                <div class="input-container">
-                    <label for="genre">Genre</label>
-                    <select id="genre" name="genre" required>
-                        <option value="masculino">Male</option>
-                        <option value="femenino">Female</option>
-                    </select>
-                </div>
-                <div class="input-container">
-                    <input type="email" id="email" name="email" required placeholder="Email">
-                </div>
-                <div class="input-container">
-                    <label for="dob">Date of Birth</label>
-                    <input type="date" id="dob" name="dob" required>
-                </div>
-                <div class="input-container">
-                    <input type="text" id="country" name="country" required placeholder="Country">
-                </div>
-                <div class="input-container">
-                    <input type="tel" id="phone" name="phone" required placeholder="Phone">
-                </div>
-                <div class="button-container">
-                    <button class="social-button google">Google</button>
-                    <button class="social-button facebook">Facebook</button>
-                    <button class="social-button apple">Apple</button>
-                    <p class="already-account">Already have an account?</p>
-                    <p class="need-help">Need help?</p>
-                </div>
-                <button class="create-account-button">Register</button>
-            </form>
-        </div>
+      <div class="register-box">
+        <h2 class="title">Create your account</h2>
+        <form action="Login.html" method="get">
+          <div class="input-container">
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              placeholder="Username"
+            />
+          </div>
+          <div class="input-container">
+            <label for="genre">Genre</label>
+            <select id="genre" name="genre" required>
+              <option value="masculino">Male</option>
+              <option value="femenino">Female</option>
+            </select>
+          </div>
+          <div class="input-container">
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              placeholder="Email"
+            />
+          </div>
+          <div class="input-container">
+            <label for="dob">Date of Birth</label>
+            <input type="date" id="dob" name="dob" required />
+          </div>
+          <div class="input-container">
+            <input
+              type="text"
+              id="country"
+              name="country"
+              required
+              placeholder="Country"
+            />
+          </div>
+          <div class="input-container">
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              required
+              placeholder="Phone"
+            />
+          </div>
+          <div class="button-container">
+            <button class="social-button google">Google</button>
+            <button class="social-button facebook">Facebook</button>
+            <button class="social-button apple">Apple</button>
+            <p class="already-account">Already have an account?</p>
+            <p class="need-help">Need help?</p>
+          </div>
+          <button class="create-account-button">Register</button>
+        </form>
+      </div>
     </section>
-</body>
+  </body>
 </html>
