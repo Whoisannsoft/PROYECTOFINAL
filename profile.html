@@ -7,50 +7,59 @@
     <link rel="stylesheet" href="css/styleprof.css">
 </head>
 <body>
-    <header>
-        <section class="left-section">
-            <div class="logo">
-                <img src="img/IconoH.png" alt="Logo">
-            </div>
-            <a href="Landing.html"><h1>PLANT DEFENDERS</h1></a>
-            <li>
-                <div class="dropdown">
-                <button class="dropbtn">About Us</button>
-                <div class="dropdown-content">
-                    <img src="img/Sth.png" alt="About Us Image">
-                    <h1>-Mastermind-</h1>
-                    <p>
-                        <p>Meet the creative force behind this page: </p>Our fearless creator,
-                        an inquisitive orange cat with an unyielding passion for Plants
-                        vs. Zombies. By day, a virtual zombie hunter; by night, the
-                        strategic mind shaping every tip you find here.<p></p><p>Get ready to
-                            explore their insights and uncover the wisdom they've gathered
-                            to help you master the game. Welcome to a world of Plants vs.
-                            Zombies, guided by the ingenuity of Seth.</p> 
-                    </p>
+    <header class="header">
+        <section class="header__left">
+          <div class="header__logo">
+            <img src="img/IconoH.png" alt="Logo" />
+          </div>
+          <a href="Landing.html" class="header__title">PLANT DEFENDERS</a>
+          <ul class="header__nav">
+            <li class="header__nav-item">
+              <div class="dropdown">
+                <button class="dropdown__button">About Us</button>
+                <div class="dropdown__content">
+                  <img src="img/Sth.png" alt="About Us Image" />
+                  <h1 class="dropdown__title">-Mastermind-</h1>
+                  <p class="dropdown__text">
+                    Meet the creative force behind this page: Our fearless
+                    creator, an inquisitive orange cat with an unyielding passion
+                    for Plants vs. Zombies. By day, a virtual zombie hunter; by
+                    night, the strategic mind shaping every tip you find here. Get
+                    ready to explore their insights and uncover the wisdom they've
+                    gathered to help you master the game. Welcome to a world of
+                    Plants vs. Zombies, guided by the ingenuity of Seth.
+                  </p>
                 </div>
-            </div>
+              </div>
             </li>
-
-            <li><a href="Contactus.html">Contact Us</a></li>
-
-            <li><a href="Botanica.html">Botanica</a></li>
-            
-            <li><a href="profile.html">Profile</a></li>
-                
+            <li class="header__nav-item">
+              <a href="Contactus.html">Contact Us</a>
+            </li>
+            <li class="header__nav-item"><a href="Botanica.html">Botanica</a></li>
+            <li class="header__nav-item"><a href="Profile.html">Profile</a></li>
+          </ul>
         </section>
-        <nav>
-            <ul>
-                <li><div class="header-center">
-                    <input type="text" placeholder="Search">
-                    <a href="buscador.html"><button type="submit">Buscar</button></a>
-                </div>
-                </li>
-                <li><a href="Login.html">Log In</a></li>
-                <li><a href="Register.html">Register</a></li>
-            </ul>
+        <nav class="header__nav">
+          <ul class="header__nav-list">
+            <li class="header__nav-item header__search">
+              <div class="header__search">
+                <input
+                  type="text"
+                  placeholder="Search"
+                  class="header__search-input"
+                />
+                <a href="buscador.html" class="header__search-button">Buscar</a>
+              </div>
+            </li>
+            <li class="header__nav-item">
+              <a href="Login.html" class="header__login">Log In</a>
+            </li>
+            <li class="header__nav-item">
+              <a href="Register.html" class="header__register">Register</a>
+            </li>
+          </ul>
         </nav>
-    </header>
+      </header>
     <main>
         <section class="corner-image top-left"><img src="img/ob4.png" alt="Image 1"></section>
         <section class="corner-image top-right"><img src="img/ob5.png" alt="Image 2"></section>
