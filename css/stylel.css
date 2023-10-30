@@ -50,12 +50,12 @@ body {
   margin-left: 1rem;
 }
 
-.input-container label {
+.input-container__label {
   display: block;
   margin-bottom: 0.7rem;
 }
 
-.input-container input {
+.input-container__input {
   width: 90%;
   padding: 0.5rem;
   border: 1px solid #eeeeee;
@@ -115,7 +115,7 @@ body {
   margin-top: 2rem;
 }
 
-.remember-forgot label {
+.remember-forgot__label {
   margin-right: 1rem;
 }
 

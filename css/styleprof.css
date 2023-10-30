@@ -159,7 +159,7 @@ body {
   margin-left: 1rem;
   border-radius: 1rem;
 }
-.profile {
+.main {
   max-width: 800px;
   margin: 2rem auto;
   background-color: #fff;
@@ -169,30 +169,35 @@ body {
   color: black;
 }
 
-.personal-info,
-.favorites,
-.change-password,
-.logout {
+.main__profile {
   margin-bottom: 1.5rem;
   padding: 2rem;
   border: 1px solid #d3b8ae;
   background-color: #f0e3dd;
 }
 
-label {
+.main__title {
+  font-weight: bold;
+}
+
+.main__form-group {
+  margin-bottom: 1rem;
+}
+
+.main__label {
   display: block;
   margin-bottom: 1rem;
   font-weight: bold;
 }
 
-input[type="password"] {
+.main__input[type="password"] {
   width: 95%;
   padding: 1rem;
   margin-bottom: 1rem;
   border: 1px solid #ccc;
 }
 
-input[type="submit"] {
+.main__button {
   background-color: #6a4c3b;
   color: #fff;
   padding: 1rem 2rem;
@@ -200,50 +205,50 @@ input[type="submit"] {
   cursor: pointer;
 }
 
-.logout a {
+.main__logout .main__link {
   color: #6a4c3b;
   text-decoration: none;
 }
 
-.logout a:hover {
+.main__logout .main__link:hover {
   text-decoration: underline;
 }
 
-.favorite-images {
+.main__favorite-images {
   display: flex;
   justify-content: space-between;
   margin-top: 2rem;
 }
 
-.favorite-images img {
+.main__favorite-images .main__image {
   width: 235px;
   margin-right: 1rem;
 }
 
-.corner-image {
+.main__corner-image {
   position: absolute;
 }
 
-.corner-image img {
+.main__corner-image .main__image {
   position: absolute;
   width: 150px;
 }
 
-.top-left {
+.main__corner-image--top-left {
   top: 950px;
   left: 50px;
 }
 
-.top-left img {
+.main__corner-image--top-left .main__image {
   width: 450px;
 }
 
-.top-right {
+.main__corner-image--top-right {
   top: 100px;
   left: 1350px;
   width: 200px;
 }
 
-.top-right img {
+.main__corner-image--top-right .main__image {
   width: 550px;
 }

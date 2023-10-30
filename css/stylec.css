@@ -175,7 +175,7 @@ body {
   height: auto;
 }
 
-main {
+.main {
   max-width: 600px;
   margin: 0 auto;
   padding: 3rem;
@@ -186,14 +186,14 @@ main {
   margin-top: 3rem;
 }
 
-.title {
+.main__title {
   position: relative;
   text-align: center;
   color: #5d4617;
   margin-bottom: 2rem;
 }
 
-.title::after {
+.main__title::after {
   content: "";
   display: block;
   width: 500px;
@@ -205,7 +205,7 @@ main {
   transform: translateX(-50%);
 }
 
-.form-group {
+.main__form-group {
   margin-bottom: 2rem;
   background-color: #dbc3a2;
   border: 2px solid #d9c5a7;
@@ -214,15 +214,15 @@ main {
   margin-left: -1rem;
 }
 
-label {
+.main__label {
   display: block;
   margin-bottom: 1rem;
   color: #5d4617;
 }
 
-input[type="text"],
-input[type="email"],
-textarea {
+.main__input[type="text"],
+.main__input[type="email"],
+.main__textarea {
   width: 90%;
   padding: 1rem;
   border: none;
@@ -232,54 +232,54 @@ textarea {
   margin-left: 1rem;
 }
 
-textarea {
+.main__textarea {
   resize: vertical;
 }
 
-.corner-image {
+.main__corner-image {
   position: absolute;
 }
 
-.corner-image img {
+.main__corner-image .main__image {
   position: absolute;
   width: 150px;
 }
 
-.top-left {
+.main__corner-image--top-left {
   top: 100px;
   left: 500px;
 }
 
-.top-left img {
+.main__corner-image--top-left .main__image {
   width: 150px;
 }
 
-.top-right {
+.main__corner-image--top-right {
   top: 700px;
   left: 1100px;
   width: 200px;
 }
 
-.top-right img {
+.main__corner-image--top-right .main__image {
   width: 300px;
 }
 
-.contact-text {
+.main__contact-text {
   text-align: center;
   font-size: 18px;
   margin-top: 20px;
   color: #5d4617;
 }
 
-.contact-text p {
+.main__contact-text p {
   margin: 5px 0;
 }
 
-.contact-text a {
+.main__contact-text a {
   color: #00ff00;
   text-decoration: none;
 }
 
-.contact-text a:hover {
+.main__contact-text a:hover {
   text-decoration: underline;
 }

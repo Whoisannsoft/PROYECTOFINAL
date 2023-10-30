@@ -19,8 +19,8 @@
                 <button class="dropdown__button">About Us</button>
                 <div class="dropdown__content">
                   <img src="img/Sth.png" alt="About Us Image" />
-                  <h1 class="dropdown__title">-Mastermind-</h1>
-                  <p class="dropdown__text">
+                  <h1>-Mastermind-</h1>
+                  <p>
                     Meet the creative force behind this page: Our fearless
                     creator, an inquisitive orange cat with an unyielding passion
                     for Plants vs. Zombies. By day, a virtual zombie hunter; by
@@ -60,45 +60,47 @@
           </ul>
         </nav>
       </header>
-    <main>
-        <section class="corner-image top-left"><img src="img/ob4.png" alt="Image 1"></section>
-        <section class="corner-image top-right"><img src="img/ob5.png" alt="Image 2"></section>
-        <section class="profile">
-            <div class="personal-info">
-                <h1>Información Personal</h1>
+      <main class="main">
+        <section class="main__corner-image main__corner-image--top-left">
+            <img src="img/ob4.png" alt="Image 1" class="main__image" />
+        </section>
+        <section class="main__corner-image main__corner-image--top-right">
+            <img src="img/ob5.png" alt="Image 2" class="main__image" />
+        </section>
+        <section class="main__profile">
+            <div class="main__personal-info">
+                <h1 class="main__title">Información Personal</h1>
                 <p>
                     <p></p>Nombre: Apachelo.
-                   <p></p> Edad: 40 años.
-                   <p></p>Sexo: Apache.
-                   <p></p>Nacionalidad: Estados Unidos.
-                   <p></p>Fecha de Nacimiento: 30 de septiembre de 1975.
-                   <p></p>Correo Electrónico: apache_heli@gmail.com
-                   <p></p>Teléfono: +1-555-123-4567
+                    <p></p> Edad: 40 años.
+                    <p></p>Sexo: Apache.
+                    <p></p>Nacionalidad: Estados Unidos.
+                    <p></p>Fecha de Nacimiento: 30 de septiembre de 1975.
+                    <p></p>Correo Electrónico: apache_heli@gmail.com
+                    <p></p>Teléfono: +1-555-123-4567
                 </p>
             </div>
-    
-            <section class="favorites">
-                <h2>Favoritos</h2>
-                <div class="favorite-images">
-                    <img src="img/fav1.png" alt="Imagen 1">
-                    <img src="img/fav2.png" alt="Imagen 2">
-                    <img src="img/fav3.png" alt="Imagen 3">
+            <section class="main__favorites">
+                <h2 class="main__subtitle">Favoritos</h2>
+                <div class="main__favorite-images">
+                    <img src="img/fav1.png" alt="Imagen 1" class="main__image" />
+                    <img src="img/fav2.png" alt="Imagen 2" class="main__image" />
+                    <img src="img/fav3.png" alt="Imagen 3" class="main__image" />
                 </div>
             </section>
-    
-            <div class="change-password">
-                <h2>Change Password</h2>
-                <form action="cambiar-contrasena.php" method="post">
-                    <label for="password">New Password:</label>
-                    <input type="password" id="password" name="password" required>
-                    <input type="submit" value="Cambiar Contraseña">
+            <div class="main__change-password">
+                <h2 class="main__subtitle">Change Password</h2>
+                <form action="cambiar-contrasena.php" method="post" class="main__form">
+                    <label for="password" class="main__label">New Password:</label>
+                    <input type="password" id="password" name="password" required class="main__input" />
+                    <input type="submit" value="Cambiar Contraseña" class="main__button" />
                 </form>
             </div>
-    
-            <div class="logout">
-                <a href="cerrar-sesion.php">Cerrar Sesión</a>
+            <div class="main__logout">
+                <a href="cerrar-sesion.php" class="main__link">Cerrar Sesión</a>
             </div>
         </section>
-        </main>
+    </main>
+    
     </body>
     </html>

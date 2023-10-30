@@ -44,7 +44,7 @@ body {
   text-align: center;
 }
 
-.register-box h2 {
+.register-box__title {
   margin-bottom: 2rem;
 }
 
@@ -53,13 +53,13 @@ body {
   text-align: left;
 }
 
-.input-container label {
+.input-container__label {
   display: block;
   margin-bottom: 0.2rem;
 }
 
-.input-container input,
-.input-container select {
+.input-container__input,
+.input-container__select {
   width: 100%;
   padding: 0.5rem;
   border: 1px solid #eeeeee;
@@ -113,13 +113,13 @@ body {
   background-color: #45a049;
 }
 
-.already-account,
-.need-help {
+.button-container__already-account,
+.button-container__need-help {
   margin-top: 1rem;
   font-size: 0.9rem;
 }
 
-.already-account:hover,
-.need-help:hover {
+.button-container__already-account:hover,
+.button-container__need-help:hover {
   text-decoration: underline;
 }

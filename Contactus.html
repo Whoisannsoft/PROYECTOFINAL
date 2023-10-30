@@ -19,8 +19,8 @@
               <button class="dropdown__button">About Us</button>
               <div class="dropdown__content">
                 <img src="img/Sth.png" alt="About Us Image" />
-                <h1 class="dropdown__title">-Mastermind-</h1>
-                <p class="dropdown__text">
+                <h1>-Mastermind-</h1>
+                <p>
                   Meet the creative force behind this page: Our fearless
                   creator, an inquisitive orange cat with an unyielding passion
                   for Plants vs. Zombies. By day, a virtual zombie hunter; by
@@ -60,32 +60,50 @@
         </ul>
       </nav>
     </header>
-    <main>
-      <div class="corner-image top-left">
-        <img src="img/ob6.png" alt="Image 1" />
+    <main class="main">
+      <div class="main__corner-image main__corner-image--top-left">
+        <img src="img/ob6.png" alt="Image 1" class="main__image" />
       </div>
-      <div class="corner-image top-right">
-        <img src="img/ob3.png" alt="Image 2" />
+      <div class="main__corner-image main__corner-image--top-right">
+        <img src="img/ob3.png" alt="Image 2" class="main__image" />
       </div>
-      <h1 class="title">How Can We Help You</h1>
-      <form>
-        <div class="form-group">
-          <label for="name">Name:</label>
-          <input type="text" id="name" name="name" required />
+      <h1 class="main__title">How Can We Help You</h1>
+      <form class="main__form">
+        <div class="main__form-group">
+          <label for="name" class="main__label">Name:</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            class="main__input"
+          />
         </div>
-        <div class="form-group">
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" required />
+        <div class="main__form-group">
+          <label for="email" class="main__label">Email:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            class="main__input"
+          />
         </div>
-        <div class="form-group">
-          <label for="message">Message:</label>
-          <textarea id="message" name="message" rows="4" required></textarea>
+        <div class="main__form-group">
+          <label for="message" class="main__label">Message:</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="4"
+            required
+            class="main__textarea"
+          ></textarea>
         </div>
-        <div class="form-group">
-          <button type="submit">Submit</button>
+        <div class="main__form-group">
+          <button type="submit" class="main__button">Submit</button>
         </div>
       </form>
-      <p class="contact-text">
+      <p class="main__contact-text">
         Contact us at:<br />
         Phone: +1 (123) 456-7890 ext. 123<br />
         Email: contact@example.com<br />
