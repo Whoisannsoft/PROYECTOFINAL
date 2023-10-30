@@ -10,97 +10,26 @@
     <section class="container">
       <div class="container__register-box register-box">
         <h2 class="register-box__title title">Create your account</h2>
-        <form action="Login.html" method="get">
-          <div class="register-box__input-container input-container">
-            <input
-              type="text"
-              id="name"
-              name="name"
-              required
-              placeholder="Username"
-              class="input-container__input"
-            />
-          </div>
-          <div class="register-box__input-container input-container">
-            <label for="genre" class="input-container__label">Genre</label>
-            <select
-              id="genre"
-              name="genre"
-              required
-              class="input-container__select"
-            >
-              <option value="masculino">Male</option>
-              <option value="femenino">Female</option>
-            </select>
-          </div>
-          <div class="register-box__input-container input-container">
-            <input
-              type="email"
-              id="email"
-              name="email"
-              required
-              placeholder="Email"
-              class="input-container__input"
-            />
-          </div>
-          <div class="register-box__input-container input-container">
-            <label for="dob" class="input-container__label"
-              >Date of Birth</label
-            >
-            <input
-              type="date"
-              id="dob"
-              name="dob"
-              required
-              class="input-container__input"
-            />
-          </div>
-          <div class="register-box__input-container input-container">
-            <input
-              type="text"
-              id="country"
-              name="country"
-              required
-              placeholder="Country"
-              class="input-container__input"
-            />
-          </div>
-          <div class="register-box__input-container input-container">
-            <input
-              type="tel"
-              id="phone"
-              name="phone"
-              required
-              placeholder="Phone"
-              class="input-container__input"
-            />
-          </div>
-          <div class="register-box__button-container button-container">
-            <button
-              class="button-container__social-button social-button google"
-            >
-              Google
-            </button>
-            <button
-              class="button-container__social-button social-button facebook"
-            >
-              Facebook
-            </button>
-            <button class="button-container__social-button social-button apple">
-              Apple
-            </button>
-            <p class="button-container__already-account already-account">
-              Already have an account?
-            </p>
-            <p class="button-container__need-help need-help">Need help?</p>
-          </div>
-          <button
-            class="register-box__create-account-button create-account-button"
-          >
-            Register
+        <div id="formContainer"></div>
+        <div class="button-container">
+          <button class="button-container__social-button social-button google">
+            Google
           </button>
-        </form>
+          <button
+            class="button-container__social-button social-button facebook"
+          >
+            Facebook
+          </button>
+          <button class="button-container__social-button social-button apple">
+            Apple
+          </button>
+          <p class="button-container__already-account already-account">
+            Already have an account?
+          </p>
+          <p class="button-container__need-help need-help">Need help?</p>
+        </div>
       </div>
     </section>
   </body>
+  <footer><script src="/script/register.js"></script></footer>
 </html>
