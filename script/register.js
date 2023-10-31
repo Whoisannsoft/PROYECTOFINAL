@@ -1,4 +1,5 @@
 
+const render = () => {
 const createInputField = (id, name, type, placeholder) => {
     const input = document.createElement("input");
     input.type = type;
@@ -59,6 +60,8 @@ const createInputField = (id, name, type, placeholder) => {
 
   createForm();
   
-  
+};
+
+window.onload = render;
   
   
