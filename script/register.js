@@ -1,4 +1,3 @@
-
 const render = () => {
   const createInputField = (id, name, type, placeholder) => {
     const input = document.createElement("input");
@@ -38,7 +37,12 @@ const render = () => {
     const genreSelect = createSelectField("genre", "genre");
     const emailInput = createInputField("email", "email", "email", "Email");
     const dobInput = createInputField("dob", "dob", "date", "Date of Birth");
-    const countryInput = createInputField("country", "country", "text", "Country");
+    const countryInput = createInputField(
+      "country",
+      "country",
+      "text",
+      "Country"
+    );
     const phoneInput = createInputField("phone", "phone", "tel", "Phone");
 
     form.appendChild(nameInput);
@@ -58,7 +62,6 @@ const render = () => {
   };
 
   createForm();
-
 };
 
 window.onload = render;
