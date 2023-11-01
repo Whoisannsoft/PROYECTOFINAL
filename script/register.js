@@ -28,6 +28,17 @@ const render = () => {
     return select;
   };
 
+  const createSocialButton = (text, className) => {
+    const button = document.createElement("button");
+    button.textContent = text;
+    button.classList.add(
+      "button-container__social-button",
+      "social-button",
+      className
+    );
+    return button;
+  };
+
   const createForm = () => {
     const form = document.createElement("form");
     form.action = "Login.html";
@@ -52,16 +63,45 @@ const render = () => {
     form.appendChild(countryInput);
     form.appendChild(phoneInput);
 
+    const buttonContainer = document.createElement("div");
+    buttonContainer.classList.add("button-container");
+
+    const googleButton = createSocialButton("Google", "google");
+    const facebookButton = createSocialButton("Facebook", "facebook");
+    const appleButton = createSocialButton("Apple", "apple");
+
+    buttonContainer.appendChild(googleButton);
+    buttonContainer.appendChild(facebookButton);
+    buttonContainer.appendChild(appleButton);
+
+    form.appendChild(buttonContainer);
+
     const registerButton = document.createElement("button");
     registerButton.type = "submit";
     registerButton.textContent = "Register";
     registerButton.classList.add("create-account-button");
+
     form.appendChild(registerButton);
 
     document.getElementById("formContainer").appendChild(form);
   };
 
   createForm();
+
+  const alreadyAccountText = document.createElement("p");
+  alreadyAccountText.textContent = "Already have an account?";
+  alreadyAccountText.classList.add(
+    "button-container__already-account",
+    "already-account"
+  );
+
+  const needHelpText = document.createElement("p");
+  needHelpText.textContent = "Need help?";
+  needHelpText.classList.add("button-container__need-help", "need-help");
+
+  const buttonContainer = document.querySelector(".button-container");
+  buttonContainer.appendChild(alreadyAccountText);
+  buttonContainer.appendChild(needHelpText);
 };
 
 window.onload = render;
