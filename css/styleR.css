@@ -48,26 +48,6 @@ body {
   margin-bottom: 2rem;
 }
 
-.input-container {
-  margin-bottom: 1rem;
-  text-align: left;
-}
-
-.input-container__label {
-  display: block;
-  margin-bottom: 0.2rem;
-}
-
-.input-container__input,
-.input-container__select {
-  width: 100%;
-  padding: 0.5rem;
-  border: 1px solid #eeeeee;
-  border-radius: 25px;
-  font-size: 1rem;
-  background-color: #eeeeee;
-}
-
 .button-container {
   margin-top: 1rem;
 }
@@ -97,52 +77,11 @@ body {
   background-color: #000;
 }
 
-.create-account-button {
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  padding: 1rem 2rem;
-  font-size: 1rem;
-  cursor: pointer;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  margin-top: 1.5rem;
-}
-
-.create-account-button:hover {
-  background-color: #45a049;
-}
-
-.button-container__already-account,
-.button-container__need-help {
-  margin-top: 1rem;
-  font-size: 0.9rem;
-}
-
-.button-container__already-account:hover,
-.button-container__need-help:hover {
-  text-decoration: underline;
-}
-
-#genre {
-  width: 100%;
-  padding: 0.5rem;
-  border: 1px solid #eeeeee;
-  border-radius: 25px;
-  font-size: 1rem;
-  background-color: #eeeeee;
-  color: #333;
-}
-
-#genre:focus {
-  border-color: #007bff;
-  outline: none;
-}
-
 .input-container__input,
 .input-container__select {
   width: 100%;
   padding: 0.5rem;
+  margin-top: 1rem;
   border: 1px solid #eeeeee;
   border-radius: 25px;
   font-size: 1rem;
@@ -150,7 +89,23 @@ body {
   color: #333;
 }
 
+#genre {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #eeeeee;
+  border-radius: 25px;
+  font-size: 1rem;
+  background-color: #eeeeee;
+  color: #333;
+}
+
+#genre:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
 .create-account-button {
+  margin-top: 1rem; 
   background-color: #4caf50;
   color: white;
   border: none;
@@ -159,7 +114,6 @@ body {
   font-size: 1rem;
   cursor: pointer;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  margin-top: 1.5rem;
 }
 
 .create-account-button:hover {
@@ -177,17 +131,7 @@ body {
   text-decoration: underline;
 }
 
-#genre {
-  width: 100%;
-  padding: 0.5rem;
-  border: 1px solid #eeeeee;
-  border-radius: 25px;
-  font-size: 1rem;
-  background-color: #eeeeee;
-  color: #333;
-}
-
-#genre:focus {
-  border-color: #007bff;
-  outline: none;
+#phone-section {
+  display: flex;
+  flex-direction: column;
 }

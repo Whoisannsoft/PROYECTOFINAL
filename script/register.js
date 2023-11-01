@@ -57,7 +57,6 @@ const render = () => {
     document.getElementById("formContainer").appendChild(form);
   };
 
-
   createForm();
 
 };
