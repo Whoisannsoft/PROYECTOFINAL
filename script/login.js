@@ -66,25 +66,6 @@ const render = () => {
       "Remember me"
     );
 
-    const loginButton = document.createElement("button");
-    loginButton.type = "submit";
-    loginButton.textContent = "Login";
-    loginButton.classList.add("login-button");
-
-    form.appendChild(usernameInput);
-    form.appendChild(passwordInput);
-    form.appendChild(rememberMeCheckbox);
-    form.appendChild(loginButton);
-
-    document.getElementById("formContainer").appendChild(form);
-
-    const buttonContainer = document.createElement("div");
-    buttonContainer.classList.add("button-container");
-
-    const googleButton = createSocialButton("Google", "google");
-    const facebookButton = createSocialButton("Facebook", "facebook");
-    const appleButton = createSocialButton("Apple", "apple");
-
     const forgotPasswordLink = document.createElement("a");
     forgotPasswordLink.href = "#";
     forgotPasswordLink.textContent = "Forgot Password?";
@@ -93,12 +74,37 @@ const render = () => {
       "forgot-password"
     );
 
+    form.appendChild(usernameInput);
+    form.appendChild(passwordInput);
+
+    const rememberForgotContainer = document.createElement("div");
+    rememberForgotContainer.classList.add("remember-forgot");
+    rememberForgotContainer.appendChild(rememberMeCheckbox);
+    rememberForgotContainer.appendChild(forgotPasswordLink);
+
+    form.appendChild(rememberForgotContainer);
+
+    const buttonContainer = document.createElement("div");
+    buttonContainer.classList.add("button-container");
+
+    const googleButton = createSocialButton("Google", "google");
+    const facebookButton = createSocialButton("Facebook", "facebook");
+    const appleButton = createSocialButton("Apple", "apple");
+
     buttonContainer.appendChild(googleButton);
     buttonContainer.appendChild(facebookButton);
     buttonContainer.appendChild(appleButton);
-    buttonContainer.appendChild(forgotPasswordLink);
 
-    document.getElementById("formContainer").appendChild(buttonContainer);
+    form.appendChild(buttonContainer);
+
+    const loginButton = document.createElement("button");
+    loginButton.type = "submit";
+    loginButton.textContent = "Login";
+    loginButton.classList.add("login-button");
+
+    form.appendChild(loginButton);
+
+    document.getElementById("formContainer").appendChild(form);
   };
 
   createForm();
