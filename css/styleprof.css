@@ -15,6 +15,11 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 0rem 2rem;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  position: fixed;
 }
 
 .header__left {
@@ -167,6 +172,7 @@ body {
   border: 1px solid #ccc;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   color: black;
+  margin-top: 10rem;
 }
 
 .main__profile {
