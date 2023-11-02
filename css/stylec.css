@@ -285,12 +285,12 @@ body {
 }
 
 .main__button {
-  background-color: #4CAF50; 
+  background-color: #4caf50;
   color: white;
-  padding: 10px 20px; 
-  border: none; 
-  border-radius: 5px; 
-  cursor: pointer; 
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .main__button:hover {

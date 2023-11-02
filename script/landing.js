@@ -218,14 +218,3 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.documentElement.appendChild(body);
 });
-
-
-
-  
-  
-  
-  
-  
-  
-  
-  
