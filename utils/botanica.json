@@ -1,0 +1,55 @@
+{
+    "imagesData": [
+      {
+        "title": "Cherry Bomb",
+        "src": "img/img.png",
+        "description": "Cherry Bomb is received after completing Level 1-2. They explode in 1.2 seconds in a 3x3 area, dealing 1800 damage to every enemy in the area and disintegrating the corpses of all defeated zombies. Cherry Bomb can also affect flying Balloon Zombies, submerged Snorkel Zombies, underground Digger Zombies, and ladders placed by Ladder Zombies."
+      },
+      {
+        "title": "Planta Carnivora",
+        "src": "img/img (2).png",
+        "description": "La Planta Carroñívora es una planta de Plantas contra Zombis que se desbloquea en el Nivel 1-7, y que también aparece en Plants vs. Zombies 2 como una planta premium que se desbloquea por medio de pago. Las plantas carnívoras engullen zombis enteros, pero tardan un tiempo en tragárselos, así que mientras mastican otros zombis se las pueden comer."
+      },
+      {
+        "title": "Hipnoseta",
+        "src": "img/img (3).png",
+        "description": "La Hipnoseta es una planta de un solo uso, es una seta que aparece en casi todos los juegos de Plants vs. Zombies, y en Plants vs. Zombies: Great Wall Edition. En el primer juego, él es desbloqueado en el nivel 2-5 Noche."
+      },
+      {
+        "title": "Petaseta",
+        "src": "img/img (4).png",
+        "description": "La Petaseta es una seta de Plantas contra zombis, explota en un gran área que elimina gran parte de los zombis en pantalla, pero deja un cráter en el que no se puede replantar. (luego de un tiempo se puede volver a plantar)."
+      },
+      {
+        "title": "Patatapum",
+        "src": "img/img (5).png",
+        "description": "Patatapum es una planta explosiva, y la tercera planta principal desbloqueada en todos los juegos de Plants vs. Zombies. Una vez plantada, Patatapum tiene que esperar 15 segundos (para un Zombi de velocidad normal, plantarla por lo mínimo tres casilleros delante del zombi) mientras está escondida, es vulnerable a que los zombis se la coman. Una vez armada, explota con los zombis de 1x2 de rango, causando 90 de daño y apareciendo así la onomatopeya ¡¡PLACA!!."
+      },
+      {
+        "title": "Repetidora",
+        "src": "img/img (6).png",
+        "description": "La Repetidora es una planta guisante que cuesta 200 soles, dispara dos guisantes a la vez y su velocidad de disparo es más rápida que la del Lanzaguisantes. Cada guisante tiene daño normal, por lo que habitualmente es de doble daño la planta. Es una de las pocas plantas que aparece en todas las entregas del juego."
+      },
+      {
+        "title": "Girasol",
+        "src": "img/img (7).png",
+        "description": "La Girasol es una planta de Plantas contra Zombis, es la segunda planta que obtendremos en el Modo Aventura y es un elemento esencial en la producción de Sol. Aparece en todos los juegos de la saga como personaje principal. El girasol puede ser mejorado y pasarse a llamar Birasol produciendo el doble de Sol el girasol mide 5 CM."
+      },
+      {
+        "title": "Nuez",
+        "src": "img/img (8).png",
+        "description": "La Nuez es una planta de Plantas contra Zombis, tiene una cáscara muy dura. Protege con ella a tus otras plantas."
+      },
+      {
+        "title": "Seta solar",
+        "src": "img/img (9).png",
+        "description": "La Seta solar es una seta que da 15 de sol al principio y 25 después. Su uso recae en la noche ya que no cae sol y su ventaja es que cuesta la mitad que el Girasol. En Plants vs. Zombies 2 da 25 de sol al principio, 50 después y 75 al final."
+      },
+      {
+        "title": "Apisonaflor",
+        "src": "img/img.jpg",
+        "description": "El Apisonaflor es una planta que aplasta al zombi que se acerca, puede aplastar uno o varios que estén en la misma casilla. Es una Guatila color verde con cara gruñona."
+      }
+    ]
+  }
+  
