@@ -52,23 +52,33 @@ document.addEventListener("DOMContentLoaded", function () {
 
             const dropdownContent = document.createElement("div");
             dropdownContent.classList.add("dropdown__content");
+            dropdownContent.style.display = "none";
 
-            const dropdownImage = document.createElement("img");
-            dropdownImage.setAttribute("src", item.dropdownContent.imageSrc);
-            dropdownImage.setAttribute("alt", "About Us Image");
+            if (item.dropdownContent) {
+                const image = document.createElement("img");
+                image.setAttribute("src", item.dropdownContent.imageSrc);
+                image.setAttribute("alt", "Dropdown Image");
 
-            const dropdownTitle = document.createElement("h1");
-            dropdownTitle.textContent = item.dropdownContent.title;
+                const title = document.createElement("div");
+                title.classList.add("dropdown__title");
+                title.textContent = item.dropdownContent.title;
 
-            const dropdownDescription = document.createElement("p");
-            dropdownDescription.textContent = item.dropdownContent.description;
+                const description = document.createElement("p");
+                description.textContent = item.dropdownContent.description;
 
-            dropdownContent.appendChild(dropdownImage);
-            dropdownContent.appendChild(dropdownTitle);
-            dropdownContent.appendChild(dropdownDescription);
+                dropdownContent.appendChild(image);
+                dropdownContent.appendChild(title);
+                dropdownContent.appendChild(description);
+            }
 
             dropdown.appendChild(dropdownButton);
             dropdown.appendChild(dropdownContent);
+
+            if (item.text === "About Us") {
+                dropdownButton.addEventListener("click", function () {
+                    dropdownContent.style.display = (dropdownContent.style.display === "none") ? "block" : "none";
+                });
+            }
 
             listItem.appendChild(dropdown);
         } else {
@@ -113,12 +123,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const searchInput = document.createElement("input");
     searchInput.setAttribute("type", "text");
     searchInput.setAttribute("placeholder", "Search");
-    searchInput.classList.add("header__nav-item","header__search-input");
+    searchInput.classList.add("header__nav-item", "header__search-input");
 
     const searchButton = document.createElement("a");
     searchButton.setAttribute("href", "buscador.html");
     searchButton.textContent = "Buscar";
-    searchButton.classList.add("header__nav-item","header__search-button");
+    searchButton.classList.add("header__nav-item", "header__search-button");
 
     searchContainer.appendChild(searchInput);
     searchContainer.appendChild(searchButton);
@@ -208,6 +218,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.documentElement.appendChild(body);
 });
+
 
 
   
