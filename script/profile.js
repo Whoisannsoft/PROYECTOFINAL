@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const body = document.createElement("body");
+    const body = document.querySelector("body");
 
     const header = document.createElement("header");
     header.classList.add("header");
@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 imageSrc: "img/Sth.png",
                 title: "-Mastermind-",
                 description:
-                    " Meet the creative force behind this page: Our fearless creator, an inquisitive orange cat with an unyielding passion for Plants vs. Zombies. By day, a virtual zombie hunter; by night, the strategic mind shaping every tip you find here. Get ready to explore their insights and uncover the wisdom they've gathered to help you master the game. Welcome to a world of Plants vs. Zombies, guided by the ingenuity of Seth",
+                    "Meet the creative force behind this page: Our fearless creator, an inquisitive orange cat with an unyielding passion for Plants vs. Zombies. By day, a virtual zombie hunter; by night, the strategic mind shaping every tip you find here. Get ready to explore their insights and uncover the wisdom they've gathered to help you master the game. Welcome to a world of Plants vs. Zombies, guided by the ingenuity of Seth",
             },
         },
         { text: "Contact Us", link: "Contactus.html" },
@@ -76,7 +76,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (item.text === "About Us") {
                 dropdownButton.addEventListener("click", function () {
-                    dropdownContent.style.display = (dropdownContent.style.display === "none") ? "block" : "none";
+                    dropdownContent.style.display =
+                        dropdownContent.style.display === "none" ? "block" : "none";
                 });
             }
 
@@ -143,8 +144,124 @@ document.addEventListener("DOMContentLoaded", function () {
     header.appendChild(headerLeft);
     header.appendChild(headerRight);
 
-    body.appendChild(header); 
+    body.insertBefore(header, body.firstChild);
 
+    const main = document.createElement("main");
+    main.className = "main";
 
-    document.body.appendChild(body);
+    const cornerImage1 = document.createElement("section");
+    cornerImage1.className = "main__corner-image main__corner-image--top-left";
+    const image1 = document.createElement("img");
+    image1.src = "img/ob4.png";
+    image1.alt = "Image 1";
+    image1.className = "main__image";
+    cornerImage1.appendChild(image1);
+    main.appendChild(cornerImage1);
+
+    const cornerImage2 = document.createElement("section");
+    cornerImage2.className = "main__corner-image main__corner-image--top-right";
+    const image2 = document.createElement("img");
+    image2.src = "img/ob5.png";
+    image2.alt = "Image 2";
+    image2.className = "main__image";
+    cornerImage2.appendChild(image2);
+    main.appendChild(cornerImage2);
+
+    const profileSection = document.createElement("section");
+    profileSection.className = "main__profile";
+
+    const personalInfo = document.createElement("div");
+    personalInfo.className = "main__personal-info";
+    const title = document.createElement("h1");
+    title.className = "main__title";
+    title.textContent = "Información Personal";
+    personalInfo.appendChild(title);
+    const pInfo = document.createElement("p");
+    pInfo.innerHTML = `
+      Nombre: Apachelo.
+      Edad: 40 años.
+      Sexo: Apache.
+      Nacionalidad: Estados Unidos.
+      Fecha de Nacimiento: 30 de septiembre de 1975.
+      Correo Electrónico: apache_heli@gmail.com
+      Teléfono: +1-555-123-4567
+    `;
+    personalInfo.appendChild(pInfo);
+    profileSection.appendChild(personalInfo);
+
+    const favorites = document.createElement("section");
+    favorites.className = "main__favorites";
+    const subtitle = document.createElement("h2");
+    subtitle.className = "main__subtitle";
+    subtitle.textContent = "Favoritos";
+    favorites.appendChild(subtitle);
+
+    const favoriteImages = document.createElement("div");
+    favoriteImages.className = "main__favorite-images";
+    const favImage1 = document.createElement("img");
+    favImage1.src = "img/fav1.png";
+    favImage1.alt = "Imagen 1";
+    favImage1.className = "main__image";
+    favoriteImages.appendChild(favImage1);
+    const favImage2 = document.createElement("img");
+    favImage2.src = "img/fav2.png";
+    favImage2.alt = "Imagen 2";
+    favImage2.className = "main__image";
+    favoriteImages.appendChild(favImage2);
+    const favImage3 = document.createElement("img");
+    favImage3.src = "img/fav3.png";
+    favImage3.alt = "Imagen 3";
+    favImage3.className = "main__image";
+    favoriteImages.appendChild(favImage3);
+
+    favorites.appendChild(favoriteImages);
+    profileSection.appendChild(favorites);
+
+    const changePassword = document.createElement("div");
+    changePassword.className = "main__change-password";
+    const changePasswordTitle = document.createElement("h2");
+    changePasswordTitle.className = "main__subtitle";
+    changePasswordTitle.textContent = "Change Password";
+    changePassword.appendChild(changePasswordTitle);
+
+    const changePasswordForm = document.createElement("form");
+    changePasswordForm.action = "cambiar-contrasena.php";
+    changePasswordForm.method = "post";
+    changePasswordForm.className = "main__form";
+
+    const passwordLabel = document.createElement("label");
+    passwordLabel.htmlFor = "password";
+    passwordLabel.className = "main__label";
+    passwordLabel.textContent = "New Password:";
+    changePasswordForm.appendChild(passwordLabel);
+
+    const passwordInput = document.createElement("input");
+    passwordInput.type = "password";
+    passwordInput.id = "password";
+    passwordInput.name = "password";
+    passwordInput.required = true;
+    passwordInput.className = "main__input";
+    changePasswordForm.appendChild(passwordInput);
+
+    const submitButton = document.createElement("input");
+    submitButton.type = "submit";
+    submitButton.value = "Cambiar Contraseña";
+    submitButton.className = "main__button";
+    changePasswordForm.appendChild(submitButton);
+
+    changePassword.appendChild(changePasswordForm);
+    profileSection.appendChild(changePassword);
+
+    const logout = document.createElement("div");
+    logout.className = "main__logout";
+    const logoutLink = document.createElement("a");
+    logoutLink.href = "";
+    logoutLink.className = "main__link";
+    logoutLink.textContent = "Cerrar Sesión";
+    logout.appendChild(logoutLink);
+    profileSection.appendChild(logout);
+
+    main.appendChild(profileSection);
+    body.appendChild(main);
+    body.appendChild(footer);
 });
