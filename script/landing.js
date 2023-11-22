@@ -27,10 +27,17 @@ document.addEventListener("DOMContentLoaded", function () {
             text: "About Us",
             dropdown: true,
             dropdownContent: {
-                imageSrc: "img/Sth.png",
-                title: "-Mastermind-",
-                description:
-                    " Meet the creative force behind this page: Our fearless creator, an inquisitive orange cat with an unyielding passion for Plants vs. Zombies. By day, a virtual zombie hunter; bynight, the strategic mind shaping every tip you find here. Getready to explore their insights and uncover the wisdom they'vegathered to help you master the game. Welcome to a world ofPlants vs. Zombies, guided by the ingenuity of Seth",
+                obj1: {
+                    imageSrc: "img/Sth.png",
+                    title: "-Mastermind-",
+                    description:
+                        " Meet the creative force behind this page: Our fearless creator, an inquisitive orange cat with an unyielding passion for Plants vs. Zombies. By day, a virtual zombie hunter; bynight, the strategic mind shaping every tip you find here. Getready to explore their insights and uncover the wisdom they'vegathered to help you master the game. Welcome to a world ofPlants vs. Zombies, guided by the ingenuity of Seth"
+                },
+                obj2: {
+                    imageSrc: "img/miku.jpg",
+                    title: "-whoisannsoft-",
+                    description: " Meet the creative force behind this page: Our fearless creator, an inquisitive orange cat with an unyielding passion for Plants vs. Zombies. By day, a virtual zombie hunter; bynight, the strategic mind shaping every tip you find here. Getready to explore their insights and uncover the wisdom they'vegathered to help you master the game. Welcome to a world ofPlants vs. Zombies, guided by the ingenuity of Seth"
+                }
             },
         },
         { text: "Contact Us", link: "Contactus.html" },
@@ -56,19 +63,34 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (item.dropdownContent) {
                 const image = document.createElement("img");
-                image.setAttribute("src", item.dropdownContent.imageSrc);
+                image.setAttribute("src", item.dropdownContent.obj1.imageSrc);
                 image.setAttribute("alt", "Dropdown Image");
 
                 const title = document.createElement("div");
                 title.classList.add("dropdown__title");
-                title.textContent = item.dropdownContent.title;
+                title.textContent = item.dropdownContent.obj1.title;
 
                 const description = document.createElement("p");
-                description.textContent = item.dropdownContent.description;
+                description.textContent = item.dropdownContent.obj1.description;
+
+                const image2 = document.createElement("img");
+                image2.setAttribute("src", item.dropdownContent.obj2.imageSrc);
+                image2.setAttribute("alt", "Dropdown Image");
+
+                const title2 = document.createElement("div");
+                title2.classList.add("dropdown__title");
+                title2.textContent = item.dropdownContent.obj2.title;
+
+                const description2 = document.createElement("p");
+                description2.textContent = item.dropdownContent.obj2.description;
 
                 dropdownContent.appendChild(image);
                 dropdownContent.appendChild(title);
                 dropdownContent.appendChild(description);
+
+                dropdownContent.appendChild(image2);
+                dropdownContent.appendChild(title2);
+                dropdownContent.appendChild(description2);
             }
 
             dropdown.appendChild(dropdownButton);
