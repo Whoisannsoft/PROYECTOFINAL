@@ -42,7 +42,6 @@ const render = () => {
     return button;
   };
 
-  // Verificar si el usuario ya ha iniciado sesión
   const isLoggedIn = localStorage.getItem("isLoggedIn");
   if (isLoggedIn) {
     alert("Ya has iniciado sesión. Serás redirigido a la página de inicio.");
@@ -111,18 +110,17 @@ const render = () => {
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
 
-    // Obtener la información del usuario almacenada
+
     const storedUser = localStorage.getItem("user");
 
     if (storedUser) {
       const parsedUser = JSON.parse(storedUser);
 
-      // Verificar si las credenciales coinciden
+
       if (email === parsedUser.email && password === parsedUser.password) {
-        // Autenticación exitosa, marcar al usuario como iniciado de sesión
+
         localStorage.setItem("isLoggedIn", true);
 
-        // Redirigir al usuario
         window.location.href = "Landing.html";
       } else {
         alert("Correo electrónico o contraseña incorrectos. Por favor, inténtalo de nuevo.");

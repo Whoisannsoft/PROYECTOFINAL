@@ -48,7 +48,6 @@ const isEmailUnique = (email) => {
 };
 
 const createForm = () => {
-  // Verificar si el usuario ya ha iniciado sesión
   const isLoggedIn = localStorage.getItem("isLoggedIn");
   if (isLoggedIn) {
     alert("Ya has iniciado sesión. Serás redirigido a la página de inicio.");
@@ -142,9 +141,6 @@ const renderLogin = () => {
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
 
-    // Aquí deberías agregar la lógica de autenticación antes de redirigir al usuario
-    // Por ejemplo, puedes comparar con la información almacenada
-    // Si la autenticación es exitosa, redirigir al usuario, de lo contrario, mostrar un mensaje de error
     window.location.href = "Landing.html";
   };
 
@@ -160,13 +156,11 @@ const register = () => {
   const phone = document.getElementById("phone").value;
   const password = document.getElementById("password").value;
 
-  // Verificar si el correo electrónico es único
   if (!isEmailUnique(email)) {
     alert("El correo electrónico ya está en uso. Por favor, usa otro correo.");
     return;
   }
 
-  // Guardar el nuevo usuario solo si el correo es único
   localStorage.setItem(
     "user",
     JSON.stringify({ name, genre, email, dob, country, phone, password })
@@ -178,10 +172,9 @@ const register = () => {
 };
 
 const logout = () => {
-  // No necesitas eliminar la marca de inicio de sesión aquí
 };
 
-// Llama a las funciones de renderización de ambas páginas
+
 window.onload = () => {
   createForm();
   renderLogin();
