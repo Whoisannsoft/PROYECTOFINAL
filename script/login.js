@@ -42,23 +42,29 @@ const render = () => {
     return button;
   };
 
+  // Verificar si el usuario ya ha iniciado sesión
+  const isLoggedIn = localStorage.getItem("isLoggedIn");
+  if (isLoggedIn) {
+    alert("Ya has iniciado sesión. Serás redirigido a la página de inicio.");
+    window.location.href = "Landing.html";
+    return;
+  }
+
   const createForm = () => {
     const form = document.createElement("form");
     form.action = "Landing.html";
     form.method = "get";
 
-    const usernameInput = createInputField(
-      "username",
-      "username",
-      "text",
-      "Username"
-    );
+    const emailInput = createInputField("email", "email", "email", "Email");
     const passwordInput = createInputField(
       "password",
       "password",
       "password",
       "Password"
     );
+
+    form.appendChild(emailInput);
+    form.appendChild(passwordInput);
 
     const rememberMeCheckbox = createCheckbox(
       "remember",
@@ -74,15 +80,8 @@ const render = () => {
       "forgot-password"
     );
 
-    form.appendChild(usernameInput);
-    form.appendChild(passwordInput);
-
-    const rememberForgotContainer = document.createElement("div");
-    rememberForgotContainer.classList.add("remember-forgot");
-    rememberForgotContainer.appendChild(rememberMeCheckbox);
-    rememberForgotContainer.appendChild(forgotPasswordLink);
-
-    form.appendChild(rememberForgotContainer);
+    form.appendChild(rememberMeCheckbox);
+    form.appendChild(forgotPasswordLink);
 
     const buttonContainer = document.createElement("div");
     buttonContainer.classList.add("button-container");
@@ -98,16 +97,43 @@ const render = () => {
     form.appendChild(buttonContainer);
 
     const loginButton = document.createElement("button");
-    loginButton.type = "submit";
+    loginButton.type = "button";
     loginButton.textContent = "Login";
     loginButton.classList.add("login-button");
+    loginButton.addEventListener("click", login);
 
     form.appendChild(loginButton);
 
     document.getElementById("formContainer").appendChild(form);
   };
 
+  const login = () => {
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+
+    // Obtener la información del usuario almacenada
+    const storedUser = localStorage.getItem("user");
+
+    if (storedUser) {
+      const parsedUser = JSON.parse(storedUser);
+
+      // Verificar si las credenciales coinciden
+      if (email === parsedUser.email && password === parsedUser.password) {
+        // Autenticación exitosa, marcar al usuario como iniciado de sesión
+        localStorage.setItem("isLoggedIn", true);
+
+        // Redirigir al usuario
+        window.location.href = "Landing.html";
+      } else {
+        alert("Correo electrónico o contraseña incorrectos. Por favor, inténtalo de nuevo.");
+      }
+    } else {
+      alert("No hay información de usuario almacenada. Por favor, regístrate.");
+    }
+  };
+
   createForm();
 };
 
 window.onload = render;
+

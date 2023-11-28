@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   const body = document.createElement("body");
 
-  const header = document.querySelector('header');
+  const header = document.createElement("header");
   header.classList.add("header");
 
   const headerLeft = document.createElement("section");
@@ -31,13 +31,13 @@ document.addEventListener("DOMContentLoaded", function () {
           imageSrc: "img/Sth.png",
           title: "-Mastermind-",
           description:
-            " Meet the creative force behind this page: Our fearless creator, an inquisitive orange cat with an unyielding passion for Plants vs. Zombies. By day, a virtual zombie hunter; bynight, the strategic mind shaping every tip you find here. Getready to explore their insights and uncover the wisdom they'vegathered to help you master the game. Welcome to a world ofPlants vs. Zombies, guided by the ingenuity of Seth"
+            " Meet the creative force behind this page: Our fearless creator, an inquisitive orange cat with an unyielding passion for Plants vs. Zombies. By day, a virtual zombie hunter; by night, the strategic mind shaping every tip you find here. Get ready to explore their insights and uncover the wisdom they've gathered to help you master the game. Welcome to a world of Plants vs. Zombies, guided by the ingenuity of Seth",
         },
         obj2: {
-          imageSrc: "img/miku.jpg",
-          title: "-whoisannsoft-",
-          description: " Meet the creative force behind this page: Our fearless creator, an inquisitive orange cat with an unyielding passion for Plants vs. Zombies. By day, a virtual zombie hunter; bynight, the strategic mind shaping every tip you find here. Getready to explore their insights and uncover the wisdom they'vegathered to help you master the game. Welcome to a world ofPlants vs. Zombies, guided by the ingenuity of Seth"
-        }
+          imageSrc: "img/AnotherImage.png",
+          title: "-Another Title-",
+          description: "Another description here.",
+        },
       },
     },
     { text: "Contact Us", link: "Contactus.html" },
@@ -98,7 +98,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (item.text === "About Us") {
         dropdownButton.addEventListener("click", function () {
-          dropdownContent.style.display = (dropdownContent.style.display === "none") ? "block" : "none";
+          dropdownContent.style.display =
+            dropdownContent.style.display === "none" ? "block" : "none";
         });
       }
 
@@ -167,28 +168,116 @@ document.addEventListener("DOMContentLoaded", function () {
 
   body.appendChild(header);
 
-  const catalog = document.querySelector('.catalog__image-catalog');
+  const catalog = document.querySelector(".catalog__image-catalog");
 
-  fetch("/utils/botanica.json")
+  const favoritePlants = JSON.parse(localStorage.getItem("favoritePlants")) || [];
+
+  fetch("http://localhost:3000/api/plants")
     .then((response) => response.json())
-    .then((jsonData) => {
-      jsonData.imagesData.forEach((imageData) => {
-        const imageContainer = document.createElement('div');
-        imageContainer.className = 'image';
+    .then((plantsData) => {
+      const first15Plants = plantsData.slice(0, 15);
 
-        imageContainer.innerHTML = `
-                    <div class="image__favorite-icon">❤️</div>
-                    <h2 class="image__title">${imageData.title}</h2>
-                    <img src="${imageData.src}" alt="Plant Image" class="image__img" />
-                    <p class="image__description">${imageData.description}</p>
-                `;
+      const plantDetailsPromises = first15Plants.map((plantName) => {
+        if (
+          plantName &&
+          typeof plantName === "string" &&
+          plantName.trim() !== ""
+        ) {
+          const formattedPlantName = plantName.toLowerCase();
+          return fetch(`http://localhost:3000/api/plants/${formattedPlantName}`)
+            .then((response) => response.json())
+            .catch((error) => {
+              console.error(
+                `Error al obtener detalles para la planta ${formattedPlantName}: ${error}`
+              );
+              return null;
+            });
+        } else {
+          console.error("Nombre de planta no válido o indefinido");
+          return null;
+        }
+      });
 
-        catalog.appendChild(imageContainer);
+      return Promise.all(plantDetailsPromises);
+    })
+    .then((plantDetailsList) => {
+      plantDetailsList.forEach((plantDetails) => {
+        if (plantDetails) {
+          const lowerCasePlantDetails = Object.fromEntries(
+            Object.entries(plantDetails).map(([key, value]) => [
+              key.toLowerCase(),
+              value,
+            ])
+          );
+
+          const imageContainer = document.createElement("div");
+          imageContainer.className = "image";
+
+          const favoriteIcon = document.createElement("div");
+          favoriteIcon.className = "image__favorite-icon";
+          updateFavoriteIcon();
+
+          favoriteIcon.addEventListener("click", function () {
+            toggleFavorite(lowerCasePlantDetails);
+            updateFavoriteIcon();
+          });
+
+          function updateFavoriteIcon() {
+            const isFavorite = favoritePlants.some(
+              (plant) => plant.name === lowerCasePlantDetails.name
+            );
+            favoriteIcon.innerHTML = isFavorite ? "❤️" : "🤍";
+          }
+
+          imageContainer.appendChild(favoriteIcon);
+
+          imageContainer.innerHTML += `
+            <h2 class="image__title">${lowerCasePlantDetails.name || "N/A"}</h2>
+            <img src="${
+              lowerCasePlantDetails.image || "img/default-plant-image.jpg"
+            }" alt="Plant Image" class="image__img" />
+            <p class="image__description">Sun cost: ${
+              lowerCasePlantDetails["sun cost"] || "N/A"
+            }</p>
+            <p class="image__description">Recharge: ${
+              lowerCasePlantDetails.recharge || "N/A"
+            }</p>
+            <p class="image__description">Damage: ${
+              lowerCasePlantDetails.damage || "N/A"
+            }</p>
+            <p class="image__description">Range: ${
+              lowerCasePlantDetails.range || "N/A"
+            }</p>
+            <p class="image__description">Family: ${
+              lowerCasePlantDetails.family || "N/A"
+            }</p>
+            <p class="image__description">Description: ${
+              lowerCasePlantDetails.description || "N/A"
+            }</p>
+          `;
+
+          catalog.appendChild(imageContainer);
+        }
       });
     })
     .catch((error) => {
-      console.error("Error al cargar el JSON: " + error);
+      console.error("Error al cargar la lista de plantas: " + error);
     });
-  document.body.appendChild(header);
+
+  function toggleFavorite(plantDetails) {
+    const index = favoritePlants.findIndex(
+      (plant) => plant.name === plantDetails.name
+    );
+
+    if (index !== -1) {
+      favoritePlants.splice(index, 1);
+    } else {
+      favoritePlants.push(plantDetails);
+    }
+
+    localStorage.setItem("favoritePlants", JSON.stringify(favoritePlants));
+  }
+
+  document.body.appendChild(body);
 });
 
